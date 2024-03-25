@@ -17,3 +17,5 @@ but for credentials provider we need to pass all the credentials need in a form 
 
 - an error would come , if we dont use npx prisma generate before starting our server for the first time
 - also we need to add new database url everytime when we turn off for some long time
+
+table - cart table

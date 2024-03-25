@@ -50,12 +50,13 @@ model Account {
 // schema.prisma
 
 model Medicine {
-  id                String  @id @default(auto()) @map("_id") @db.ObjectId
-  medicineID      Int
-  medicineName    String
-  manufacturer    String
-  dosageStrength  String
-  priceUSD        Float
-  expiryDate      DateTime
-  imageURL        String
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  medicineid     Int?
+  medicinename    String?
+  manufacturer    String?
+  dosagedtrength  String?
+  priceusd       Float?
+  expirydate      DateTime?
+  imageurl        String?
+
 }

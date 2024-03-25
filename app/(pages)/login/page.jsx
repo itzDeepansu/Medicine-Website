@@ -17,10 +17,12 @@ const page = () => {
   } = useForm();
   const onSubmit = async (data) => {
     let res = await signIn("credentials", { ...data, redirect: false });
-    console.log(res.error);
     if (res.error) {
       setwrongcred(res.error)
     } 
+    else{
+      router.push('/')
+    }
   };
   return (
     <div className=" h-screen flex items-center justify-center bg-white text-black">
