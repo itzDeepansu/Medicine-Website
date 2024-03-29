@@ -54,9 +54,50 @@ model Medicine {
   medicineid     Int?
   medicinename    String?
   manufacturer    String?
-  dosagedtrength  String?
+  associateddisease  String?
   priceusd       Float?
   expirydate      DateTime?
   imageurl        String?
 
+}
+
+// schema.prisma
+
+model Risk {
+  id  String  @id @default(auto()) @map("_id") @db.ObjectId
+  AndhraPradesh Json?
+  ArunachalPradesh Json?
+  Assam Json
+  Bihar Json
+  Chhattisgarh Json
+  Goa Json
+  Gujarat Json
+  Haryana Json
+  HimachalPradesh Json
+  Jharkhand Json
+  Karnataka Json
+  Kerala Json
+  MadhyaPradesh Json
+  Maharashtra Json
+  Manipur Json
+  Meghalaya Json
+  Mizoram Json
+  Nagaland Json
+  Odisha Json
+  Punjab Json
+  Rajasthan Json
+  Sikkim Json
+  TamilNadu Json
+  Telangana Json
+  Tripura Json
+  UttarPradesh Json
+  Uttarakhand Json
+  WestBengal Json
+  AndamanAndNicobarIslands Json
+  Chandigarh Json
+  DadraAndNagarHaveli Json
+  DamanAndDiu Json
+  Delhi Json
+  Lakshadweep Json
+  Puducherry Json
 }
