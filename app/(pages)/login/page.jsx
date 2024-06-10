@@ -11,9 +11,7 @@ const page = () => {
   const {
     register,
     handleSubmit,
-    watch,
-    reset,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
     let res = await signIn("credentials", { ...data, redirect: false });
@@ -63,7 +61,7 @@ const page = () => {
             <input
               type="submit"
               value="Log In"
-              className="h-9 my-4 rounded-full bg-blue-500 m-auto py-3 px-6 cursor-pointer text-white"
+              className="h-9 my-4 rounded-full bg-blue-500 m-auto px-6 cursor-pointer text-white"
             />
           </form>
           <div className="m-auto">
