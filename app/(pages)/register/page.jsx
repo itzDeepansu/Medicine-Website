@@ -8,9 +8,8 @@ const page = () => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
     const res = await fetch("api/register", {
@@ -79,7 +78,7 @@ const page = () => {
             <input
               type="submit"
               value="Create Account"
-              className="h-9 my-4 rounded-full bg-blue-500 m-auto py-3 px-6 cursor-pointer text-white"
+              className="h-9 rounded-md w-full my-3 bg-black m-auto hover:bg-slate-800 px-6 cursor-pointer text-white"
             />
           </form>
           <div className="m-auto">

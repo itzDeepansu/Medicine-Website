@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
   const [wrongcred, setwrongcred] = useState("none")
@@ -15,13 +16,18 @@ const page = () => {
   } = useForm();
   const onSubmit = async (data) => {
     let res = await signIn("credentials", { ...data, redirect: false });
-    if (res.error) {
+    if (res.error) { 
       setwrongcred(res.error)
     } 
     else{
       router.push('/')
     }
   };
+  const handleGuestLogin=async () => {
+    await signIn("credentials", { email: "guest@gmail.com", password: "guest", redirect: false })
+    router.push("/")
+  }
+
   return (
     <div className=" h-screen flex items-center justify-center bg-white text-black">
       <div className="flex items-center justify-center bg-transparent h-[630px] w-[1150px] gap-6">
@@ -61,9 +67,10 @@ const page = () => {
             <input
               type="submit"
               value="Log In"
-              className="h-9 my-4 rounded-full bg-blue-500 m-auto px-6 cursor-pointer text-white"
+              className="h-9 mt-1 rounded-md bg-black w-full m-auto px-6 cursor-pointer text-white hover:bg-slate-800"
             />
           </form>
+          <Button onClick={() => handleGuestLogin()}>Guest Login</Button>
           <div className="m-auto">
             Don't have an account?{" "}
             <Link href="/register" className="text-blue-700 underline">

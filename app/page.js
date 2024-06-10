@@ -9,10 +9,9 @@ export default async function Home() {
     return (
       <>
       <Navbar />
-      Access Granted
+      Hi {session.user.name}
       <ClientButton/>
       </>
-      
     )
   }
   else{
